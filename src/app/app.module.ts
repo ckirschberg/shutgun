@@ -9,17 +9,26 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ErikComponent } from './erik/erik.component';
+import { LasseComponent } from './lasse/lasse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent,
+    PageNotFoundComponent,
+    ErikComponent,
+    LasseComponent
   ],
   imports: [ 
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule, MatFormFieldModule, MatButtonModule,
+    MatInputModule, MatFormFieldModule, MatButtonModule, MatToolbarModule,
     ReactiveFormsModule
 
   ],
