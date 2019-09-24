@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,16 +15,22 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      "username": [''],
-      "password": ['']
+      "username": ['', [Validators.required, Validators.minLength(3)]],
+      "password": ['', Validators.required]
     })
   }
 
   public onLoginClick() : void {
     console.log(this.loginForm);  
     
+
     // If this form is valid - then call the server.
-    
+    if (this.loginForm.valid) {
+      // Then call the server
+    } else {
+      console.log("Cant. Must fix form errors first");
+    }
+
 
   }
 
