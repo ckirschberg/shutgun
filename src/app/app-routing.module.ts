@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth/auth.guard';
+import { RegisterTripComponent } from './register-trip/register-trip.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -22,8 +24,9 @@ const routes: Routes = [
       {path: 'lasse', component: LasseComponent}
     ]},  
   ]},
-  {path: 'portal', component: PortalComponent, children: [
-    {path: 'findalift', component: FindALiftComponent}
+  {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
+    {path: 'findalift', component: FindALiftComponent},
+    {path: 'registertrip', component: RegisterTripComponent}
   ]},
 
   { path: '**', component: PageNotFoundComponent }
