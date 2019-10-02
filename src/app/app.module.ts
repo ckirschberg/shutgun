@@ -14,6 +14,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ErikComponent } from './erik/erik.component';
 import { LasseComponent } from './lasse/lasse.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { PortalComponent } from './portal/portal.component';
+import { FindALiftComponent } from './find-a-lift/find-a-lift.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { LasseComponent } from './lasse/lasse.component';
     ContactComponent,
     PageNotFoundComponent,
     ErikComponent,
-    LasseComponent
+    LasseComponent,
+    HomeComponent,
+    RegisterComponent,
+    PortalComponent,
+    FindALiftComponent
   ],
   imports: [ 
     BrowserModule,
