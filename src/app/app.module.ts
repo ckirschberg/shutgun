@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { PortalComponent } from './portal/portal.component';
 import { FindALiftComponent } from './find-a-lift/find-a-lift.component';
 import { RegisterTripComponent } from './register-trip/register-trip.component';
+import { UserAdminComponent } from './user-admin/user-admin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
     RegisterComponent,
     PortalComponent,
     FindALiftComponent,
-    RegisterTripComponent
+    RegisterTripComponent,
+    UserAdminComponent
   ],
   imports: [ 
     BrowserModule,

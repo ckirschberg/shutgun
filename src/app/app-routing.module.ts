@@ -1,3 +1,4 @@
+import { AdminGuard } from './auth/admin.guard';
 import { AuthGuard } from './auth/auth.guard';
 import { RegisterTripComponent } from './register-trip/register-trip.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { PortalComponent } from './portal/portal.component';
 import { FindALiftComponent } from './find-a-lift/find-a-lift.component';
+import { UserAdminComponent } from './user-admin/user-admin.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   ]},
   {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
     {path: 'findalift', component: FindALiftComponent},
-    {path: 'registertrip', component: RegisterTripComponent}
+    {path: 'registertrip', component: RegisterTripComponent},
+    {path: 'user-admin', component: UserAdminComponent, canActivate: [AdminGuard]}
   ]},
 
   { path: '**', component: PageNotFoundComponent }
