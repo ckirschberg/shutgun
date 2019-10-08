@@ -31,4 +31,13 @@ export class DataService {
   ];
 
   constructor() { }
+
+  addTrip(trip: Trip) : void {
+    // Generate an _id until we learn to call the web service
+    // where an id will be generated for us.
+  }
+
+  deleteTrip(id: string) : void {
+
+  }
 }
