@@ -35,6 +35,7 @@ export class DataService {
   addTrip(trip: Trip) : void {
     // Generate an _id until we learn to call the web service
     // where an id will be generated for us.
+    this.tempData.push(trip);
   }
 
   deleteTrip(id: string) : void {
