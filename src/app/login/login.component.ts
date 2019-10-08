@@ -11,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+    loginForm: FormGroup;
 
   // DI - Dependency injection.
   constructor(private fb: FormBuilder, private router: Router, 

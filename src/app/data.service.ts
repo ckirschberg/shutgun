@@ -13,7 +13,7 @@ export class DataService {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 0, 1, 8, 0,0 ), 
-    owner: {_id: '21', firstName: 'Eric'} as User },
+    owner: {_id: '21', firstName: 'Eric', lastName: 'Sørensen', email: 'eric@sørensen.dk'} as User },
     
     {_id: '2', 
     origin: 'Hillerød', 

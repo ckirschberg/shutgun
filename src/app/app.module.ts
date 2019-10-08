@@ -20,6 +20,8 @@ import { PortalComponent } from './portal/portal.component';
 import { FindALiftComponent } from './find-a-lift/find-a-lift.component';
 import { RegisterTripComponent } from './register-trip/register-trip.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { UserAdminComponent } from './user-admin/user-admin.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule, MatFormFieldModule, MatButtonModule, MatToolbarModule,
+    MatInputModule, MatFormFieldModule, MatButtonModule, MatToolbarModule, MatCardModule,
     ReactiveFormsModule
 
   ],

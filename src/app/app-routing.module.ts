@@ -26,7 +26,7 @@ const routes: Routes = [
       {path: 'lasse', component: LasseComponent}
     ]},  
   ]},
-  {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
+  {path: 'portal', component: PortalComponent /*, canActivate: [AuthGuard]*/, children: [
     {path: 'findalift', component: FindALiftComponent},
     {path: 'registertrip', component: RegisterTripComponent},
     {path: 'user-admin', component: UserAdminComponent, canActivate: [AdminGuard]}

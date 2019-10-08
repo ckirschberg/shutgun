@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-find-a-lift',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindALiftComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
