@@ -1,6 +1,13 @@
 import { browser, element, by, protractor } from 'protractor';
+import { AppPage } from './app.po';
 
 describe('Trip tests', () => {
+  let page: AppPage;
+
+  beforeEach(() => {
+    page = new AppPage();
+  });
+
 
   // 1.0: A simple test
   // 1.1: ...
@@ -28,14 +35,10 @@ describe('Trip tests', () => {
 
   it('should create new trip', () => {
     browser.get('');
-    element(by.id('home-login')).click();
-    // browser.sleep(2000);
-    element(by.id('username-input')).sendKeys('username');
-    element(by.id('password-input')).sendKeys('password');
-    element(by.id('login-button')).click();
     
-    element(by.id('findalift-button')).click();
+    page.login('username', 'password');
 
+    element(by.id('findalift-button')).click();
 
     element.all(by.css('.example-card')).then((el) => {
       const before = el.length; // eg before = 3
@@ -55,5 +58,20 @@ describe('Trip tests', () => {
       });
     });
   });
+  // expects to be after this test...
+
+
+
+  it('should delete a lift/trip', () => {
+    element.all(by.css('.example-card')).then((elements) => {
+      const trips = elements.length;
+      element.all(by.css('.delete-button')).get(1).click();
+      element.all(by.css('.example-card')).then((elementsAfter) => {
+        expect(trips).toEqual(elementsAfter.length + 1);
+      });
+    });
+  });
+
+
 });
 
