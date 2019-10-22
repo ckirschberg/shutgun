@@ -2,7 +2,7 @@
 
   <form [formGroup]="loginForm" class="example-form" (ngSubmit)="onLoginClick()">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Login" formControlName="username">
+      <input matInput placeholder="Login" formControlName="username" id="username-input">
       
       <mat-error *ngIf="loginForm.controls.username.hasError('required')">
         Please provide a username
@@ -15,8 +15,8 @@
     </mat-form-field> 
 
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Password" type="password" formControlName="password">
+      <input matInput placeholder="Password" type="password" formControlName="password" id="password-input">
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Login</button>
+    <button mat-raised-button color="primary" id="login-button">Login</button>
   </form>
