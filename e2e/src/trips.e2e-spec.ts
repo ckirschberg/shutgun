@@ -1,4 +1,4 @@
-import { browser, element, by, protractor } from "protractor";
+import { browser, element, by, protractor } from 'protractor';
 
 describe('Trip tests', () => {
 
@@ -12,7 +12,7 @@ describe('Trip tests', () => {
     // Assert
     browser.get('');
     element(by.id('home-login')).click();
-    expect(element(by.css("h1")).getText()).toEqual("Login");
+    expect(element(by.css('h1')).getText()).toEqual('Login');
     
     //write code to log in.
 

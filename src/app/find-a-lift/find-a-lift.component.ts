@@ -13,4 +13,8 @@ export class FindALiftComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDeleteLift(id: string): void {
+    this.dataService.deleteTrip(id);
+  }
+
 }

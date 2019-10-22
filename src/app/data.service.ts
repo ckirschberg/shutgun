@@ -40,5 +40,7 @@ export class DataService {
 
   deleteTrip(id: string): void {
     //filter might be helpful
+    this.tempData = this.tempData.filter(trip => trip._id !== id );
+
   }
 }
