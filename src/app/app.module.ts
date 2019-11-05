@@ -22,7 +22,10 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
 import {MatCardModule} from '@angular/material/card';
 import { TripComponent } from './trip/trip.component';
-
+import { AppState } from './redux/store';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
+import { rootReducer } from './redux/store'; // Added this to get the root reducer
 
 @NgModule({
   declarations: [
@@ -40,15 +43,27 @@ import { TripComponent } from './trip/trip.component';
     UserAdminComponent,
     TripComponent
   ],
-  imports: [ 
+  imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule, MatFormFieldModule, MatButtonModule, MatToolbarModule, MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgReduxModule,
+    NgReduxRouterModule.forRoot()
+
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private ngRedux: NgRedux<AppState>,
+              // private devTool: DevToolsExtension,
+              private ngReduxRouter: NgReduxRouter) {
+
+    this.ngRedux.configureStore(rootReducer, {});
+
+    ngReduxRouter.initialize(/* args */);
+  }
+ }
