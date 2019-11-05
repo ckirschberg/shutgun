@@ -21,6 +21,7 @@ import { FindALiftComponent } from './find-a-lift/find-a-lift.component';
 import { RegisterTripComponent } from './register-trip/register-trip.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
 import {MatCardModule} from '@angular/material/card';
+import { TripComponent } from './trip/trip.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatCardModule} from '@angular/material/card';
     PortalComponent,
     FindALiftComponent,
     RegisterTripComponent,
-    UserAdminComponent
+    UserAdminComponent,
+    TripComponent
   ],
   imports: [ 
     BrowserModule,
