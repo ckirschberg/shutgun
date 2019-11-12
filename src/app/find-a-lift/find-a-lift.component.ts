@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { NgRedux } from '@angular-redux/store';
 import { AppState } from '../redux/store';
+import { Trip } from '../entities/trip';
 
 @Component({
   selector: 'app-find-a-lift',
@@ -11,19 +12,22 @@ import { AppState } from '../redux/store';
 })
 export class FindALiftComponent implements OnInit {
   private isLift: boolean;
+  private lifts: Trip[];
 
-  constructor(private dataService: DataService, private liftActions: LiftActions,
+  constructor(private liftActions: LiftActions,
               private ngRedux: NgRedux<AppState>) { }
 
     // Subscribe to the store.
   ngOnInit() {
     this.ngRedux.select(x => x.trips).subscribe((state) => {
       this.isLift = state.isLift;
+      this.lifts = state.lifts;
     });
   }
 
   onDeleteLift(id: string): void {
-    this.dataService.deleteTrip(id);
+    this.liftActions.deleteTrip(id);
+    // this.dataService.deleteTrip(id);
   }
 
   onTestClick(): void {

@@ -1,6 +1,6 @@
 <p>find-a-lift works!</p>
 
-<div *ngFor="let tripObject of dataService.tempData" class="lift-container">
+<div *ngFor="let tripObject of lifts" class="lift-container">
 
   <app-trip (tripDeleteEmitter)="onDeleteLift($event)" [trip]="tripObject" ></app-trip>
     

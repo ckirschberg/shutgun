@@ -1,3 +1,4 @@
+import { LiftActions } from './../find-a-lift/lift-actions';
 import { AuthService } from './../auth/auth.service';
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class RegisterTripComponent implements OnInit {
   tripForm: FormGroup;
   
   constructor(private fb: FormBuilder, private router: Router, private data: DataService,
-    private auth: AuthService) { }
+    private auth: AuthService, private liftActions: LiftActions) { }
 
   ngOnInit() {
     this.tripForm = this.fb.group({
@@ -30,7 +31,8 @@ export class RegisterTripComponent implements OnInit {
       let trip = this.tripForm.value as Trip;
       trip.owner = this.auth.loggedInUser;
 
-      this.data.addTrip(trip);
+      // this.data.addTrip(trip);
+      this.liftActions.createTrip(trip);
       this.router.navigate(['/portal/findalift']);
     }
   }
