@@ -32,6 +32,7 @@ export function tripsReducer(state: TripState = INITIAL_STATE, action: any) {
     
 
   case LiftActions.SET_TYPE:
+    
     // return Object.assign({}, state, { isLift: action.payload });
     return tassign(state, { isLift: action.payload });
 

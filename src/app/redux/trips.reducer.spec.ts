@@ -22,16 +22,17 @@ describe('trips reducer', () => {
   it('set isLift to true', () => {
     // Arrange
     const ds = new DataService();
-    const expectedOutput = {isLift: true, lifts: ds.tempData };
-    const inputState = { isLift: false, lifts: ds.tempData };
-    const actionObject = { type: types.LiftActions.SET_TYPE, payload: true };
+    const inputState = { isLift: false, lifts: ds.tempData }; // Configuring my previous state
+    const actionObject = { type: types.LiftActions.SET_TYPE, payload: true }; // Action object
+    const expectedOutput = {isLift: true, lifts: ds.tempData }; // After test I want this!
 
+    deepFreeze(inputState);
     // Act
-    const result = tripsReducer(inputState, actionObject);
+    const result = tripsReducer(inputState, actionObject); // Perform test
 
     // Assert
-    expect(result).toEqual(expectedOutput);
+    expect(result).toEqual(expectedOutput); // If true, test passes
   });
 
-  
+
 });
