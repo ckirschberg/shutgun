@@ -23,7 +23,7 @@ import { UserAdminComponent } from './user-admin/user-admin.component';
 import {MatCardModule} from '@angular/material/card';
 import { TripComponent } from './trip/trip.component';
 import { AppState } from './redux/store';
-import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 import { rootReducer } from './redux/store'; // Added this to get the root reducer
 
@@ -59,10 +59,10 @@ import { rootReducer } from './redux/store'; // Added this to get the root reduc
 })
 export class AppModule {
   constructor(private ngRedux: NgRedux<AppState>,
-              // private devTool: DevToolsExtension,
+              private devTool: DevToolsExtension,
               private ngReduxRouter: NgReduxRouter) {
 
-    this.ngRedux.configureStore(rootReducer, {});
+                this.ngRedux.configureStore(rootReducer, {}, [],[ devTool.isEnabled() ? devTool.enhancer() : f => f]);
 
     ngReduxRouter.initialize(/* args */);
   }
