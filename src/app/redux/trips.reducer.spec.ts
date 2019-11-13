@@ -13,7 +13,7 @@ describe('trips reducer', () => {
     
     //Arrange
     const ds = new DataService();
-    const expectedOutput = {isLift: false, lifts: ds.tempData};
+    const expectedOutput = {isLift: false, lifts: [], isLoading: false};
 
     // Act
     const result = tripsReducer(undefined, {});
@@ -25,9 +25,9 @@ describe('trips reducer', () => {
   it('set isLift to true', () => {
     // Arrange
     
-    const inputState = { isLift: false, lifts: ds.tempData }; // Configuring my previous state
+    const inputState = { isLift: false, lifts: ds.tempData, isLoading: false }; // Configuring my previous state
     const actionObject = { type: types.LiftActions.SET_TYPE, payload: true }; // Action object
-    const expectedOutput = {isLift: true, lifts: ds.tempData }; // After test I want this!
+    const expectedOutput = {isLift: true, lifts: ds.tempData, isLoading: false }; // After test I want this!
 
     deepFreeze(inputState);
     // Act
@@ -42,9 +42,9 @@ describe('trips reducer', () => {
     // expect after that the state has a lift array one size larger and check the object as well.
     const trip: Trip = { origin:"KEA", departureTime: new Date(2019, 0, 2) } as Trip;// Create a trip obj.
 
-    const inputState = { isLift: false, lifts: [] }; // Configuring my previous state
+    const inputState = { isLift: false, lifts: [], isLoading: true }; // Configuring my previous state
     const actionObject = { type: types.LiftActions.CREATE_TRIP, payload: trip }; // Action object
-    const expectedOutput = { isLift: false, lifts: [trip] }; // After test I want this!
+    const expectedOutput = { isLift: false, lifts: [trip], isLoading: false }; // After test I want this!
 
     deepFreeze(inputState);
     // Act
@@ -60,7 +60,7 @@ describe('trips reducer', () => {
     // expect after that the state has a lift array one size larger and check the object as well.
     const trip: Trip = { origin:"KEA", departureTime: new Date(2019, 0, 2) } as Trip;// Create a trip obj.
 
-    const inputState = { isLift: false, lifts: ds.tempData }; // Configuring my previous state
+    const inputState = { isLift: false, lifts: ds.tempData, isLoading: true }; // Configuring my previous state
     const actionObject = { type: types.LiftActions.CREATE_TRIP, payload: trip }; // Action object
 
     deepFreeze(inputState);
@@ -77,9 +77,9 @@ describe('trips reducer', () => {
     // expect after that the state has a lift array one size larger and check the object as well.
     const trip: Trip = { _id: '1', origin:"KEA", departureTime: new Date(2019, 0, 2) } as Trip;// Create a trip obj.
 
-    const inputState = { isLift: false, lifts: [trip] }; // Configuring my previous state
+    const inputState = { isLift: false, lifts: [trip], isLoading: false }; // Configuring my previous state
     const actionObject = { type: types.LiftActions.DELETE_TRIP, payload: '1' }; // Action object
-    const expectedOutput = { isLift: false, lifts: [] }; // After test I want this!
+    const expectedOutput = { isLift: false, lifts: [], isLoading: false }; // After test I want this!
 
     deepFreeze(inputState);
     // Act

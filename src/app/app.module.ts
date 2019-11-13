@@ -26,6 +26,7 @@ import { AppState } from './redux/store';
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 import { rootReducer } from './redux/store'; // Added this to get the root reducer
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { rootReducer } from './redux/store'; // Added this to get the root reduc
     MatInputModule, MatFormFieldModule, MatButtonModule, MatToolbarModule, MatCardModule,
     ReactiveFormsModule,
     NgReduxModule,
-    NgReduxRouterModule.forRoot()
+    NgReduxRouterModule.forRoot(),
+    HttpClientModule,
 
 
   ],

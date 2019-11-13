@@ -5,7 +5,8 @@ import { Trip } from '../entities/trip';
 
 export class TripState {
   isLift: boolean;
-  lifts: Trip[]; 
+  lifts: Trip[];
+  isLoading: boolean;
 }
 export class AppState {
   trips?: TripState;
