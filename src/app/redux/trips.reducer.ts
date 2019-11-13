@@ -18,7 +18,8 @@ export function tripsReducer(state: TripState = INITIAL_STATE, action: any) {
     // state.lifts.push(action.payload);
     // return state;
 
-    const newLifts = state.lifts.concat([action.payload]);
+    // const newLifts = state.lifts.concat([action.payload]);
+    const newLifts = [...state.lifts, action.payload]; // Javascript spread operator
     return tassign(state, { lifts: newLifts });
     
     case LiftActions.DELETE_TRIP:
