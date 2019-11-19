@@ -19,6 +19,7 @@ export class FindALiftComponent implements OnInit {
 
     // Subscribe to the store.
   ngOnInit() {
+
     this.ngRedux.select(x => x.trips).subscribe((state) => {
       this.isLift = state.isLift;
       this.lifts = state.lifts;
@@ -34,4 +35,5 @@ export class FindALiftComponent implements OnInit {
     // dispatch action by calling an action creator.
     this.liftActions.setType(true);
   }
+
 }

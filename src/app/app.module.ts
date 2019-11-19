@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -27,6 +27,7 @@ import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store'
 import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 import { rootReducer } from './redux/store'; // Added this to get the root reducer
 import { HttpClientModule } from '@angular/common/http';
+import { FilterLift } from './find-a-lift/lift.filter';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     FindALiftComponent,
     RegisterTripComponent,
     UserAdminComponent,
-    TripComponent
+    TripComponent, FilterLift
   ],
   imports: [
     BrowserModule,
@@ -53,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgReduxModule,
     NgReduxRouterModule.forRoot(),
     HttpClientModule,
+    FormsModule
 
 
   ],
